@@ -9,27 +9,29 @@ import java.util.List;
 public class AutoDaoImplement implements IAutoDAO {
     @Override
     public void add(Auto auto) {
-        // agregar auto
         MemoryStore.addAuto(auto);
+
     }
+
     @Override
     public void update(Auto auto) {
-        // actualizar auto
         MemoryStore.editAuto(auto);
     }
+
     @Override
     public List<Auto> get() {
-        // listar autos
         return MemoryStore.getAutos();
+
     }
+
     @Override
     public Auto getAuto(String placa) {
-        // listar un auto
         return MemoryStore.getAuto(placa);
     }
+
     @Override
-    public void detele(String placa) {
-        // eliminar auto
+    public void delete(String placa) {
         MemoryStore.deleteAuto(placa);
     }
+
 }

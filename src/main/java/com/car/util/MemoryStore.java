@@ -7,35 +7,36 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MemoryStore {
-    private static HashMap<String, Auto>
-            autos = new HashMap<String, Auto>();
-    // añadir auto
+    private static HashMap<String, Auto> autos= new HashMap<>();
+
+    //añadir auto
     public static void addAuto(Auto auto){
-        String placa = auto.getPlaca();
-        if(autos.containsKey(placa)){
-            autos.remove(placa);
+        String placa= auto.getPlaca();
+        if (autos.containsKey(placa)) {
+            autos.remove(placa, auto);
         }
         autos.put(placa, auto);
     }
-    //actualizar
+
+    //autualizar auto
     public static void editAuto(Auto auto){
         autos.replace(auto.getPlaca(), auto);
-
     }
 
-    // listar los autos
+    //listar todos los autos
     public static List<Auto> getAutos(){
         return new ArrayList<>(autos.values());
     }
 
-    // listar un auto
+    //obtener un auto
     public static Auto getAuto(String placa){
         return autos.get(placa);
     }
 
     public static void deleteAuto(String placa){
-        if(autos.containsKey(placa)){
+        if (autos.containsKey(placa)) {
             autos.remove(placa);
         }
+
     }
 }

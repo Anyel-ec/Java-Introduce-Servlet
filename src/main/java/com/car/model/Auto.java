@@ -1,35 +1,29 @@
 package com.car.model;
 
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class Auto {
-    // atributos del auto
-    private String placa;
     private String marca;
     private String modelo;
+    private String placa;
     private String cilindraje;
     private String anio;
     private String consumo;
 
-    // constructor vacio
     public Auto() {
     }
 
-    // constructor con parametros
-    public Auto(String placa, String marca, String modelo, String cilindraje, String anio, String consumo) {
-        this.placa = placa;
+    public Auto(String marca, String modelo, String placa, String cilindraje, String anio, String consumo) {
         this.marca = marca;
         this.modelo = modelo;
+        this.placa = placa;
         this.cilindraje = cilindraje;
         this.anio = anio;
         this.consumo = consumo;
-    }
-
-    // getters y setters
-    public String getPlaca() {
-        return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
     }
 
     public String getMarca() {
@@ -46,6 +40,14 @@ public class Auto {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
     public String getCilindraje() {
@@ -72,13 +74,12 @@ public class Auto {
         this.consumo = consumo;
     }
 
-    // metodo toString
     @Override
     public String toString() {
         return "Auto{" +
-                "placa='" + placa + '\'' +
-                ", marca='" + marca + '\'' +
+                "marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
+                ", placa='" + placa + '\'' +
                 ", cilindraje='" + cilindraje + '\'' +
                 ", anio='" + anio + '\'' +
                 ", consumo='" + consumo + '\'' +
