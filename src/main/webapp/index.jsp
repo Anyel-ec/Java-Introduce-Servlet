@@ -14,6 +14,13 @@
     <div class="text-center mb-3">
         <a href="servletController?opcion=registro" class="btn btn-primary">Añadir Auto</a>
     </div>
+    <form action="servletController" method="get" class="mb-3">
+        <input type="hidden" name="opcion" value="buscar">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar por placa" name="placa">
+            <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+        </div>
+    </form>
     <table class="table table-bordered">
         <thead>
         <tr>

@@ -9,5 +9,5 @@ public interface IAutoDAO {
     List<Auto> get();
     Auto getAuto(String placa);
     void delete(String placa);
-
+    Auto getAutoByPlaca(String placa);
 }

@@ -37,6 +37,7 @@ public class MemoryStore {
         if (autos.containsKey(placa)) {
             autos.remove(placa);
         }
-
     }
+
+
 }

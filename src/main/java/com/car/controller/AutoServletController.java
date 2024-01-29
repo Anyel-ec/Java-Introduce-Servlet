@@ -40,9 +40,26 @@ public class AutoServletController extends HttpServlet {
             request.setAttribute("auto", oAuto);
             RequestDispatcher rd = request.getRequestDispatcher("actualizar.jsp");
             rd.forward(request, response);
-        }
-    }
+        }else if (opcion.equals("buscar")){
+            buscarAuto(request, response);
 
+        }
+
+
+
+    }
+    private void buscarAuto(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String placa = request.getParameter("placa");
+
+        IAutoDAO autoDao = new AutoDaoImplement();
+        Auto auto = autoDao.getAutoByPlaca(placa);
+
+        // Puedes pasar el objeto Auto a la vista (JSP) para mostrar los resultados
+        request.setAttribute("autoEncontrado", auto);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("mostrarAuto.jsp");
+        dispatcher.forward(request, response);
+    }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String opcion = req.getParameter("opcion");
